@@ -9,6 +9,10 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^6.26.2",
+    "axios": "^1.7.7",
+    "socket.io-client": "^4.7.5",
+    "react-icons": "^5.5.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -36,4 +40,6 @@
       "last 1 safari version"
     ]
   }
+  ,
+  "proxy": "http://localhost:5000"
 }
