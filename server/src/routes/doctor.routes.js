@@ -40,6 +40,11 @@ router.post('/appointments/:id/prescription', requireAuth(['doctor']), loadDocto
 	return res.status(201).json(pres);
 });
 
+// Get availability
+router.get('/availability', requireAuth(['doctor']), loadDoctorForUser, requireDoctorApproved(), async (req, res) => {
+	return res.json(req.doctor);
+});
+
 // Update availability
 router.post('/availability', requireAuth(['doctor']), loadDoctorForUser, requireDoctorApproved(), async (req, res) => {
 	const { availability } = req.body;

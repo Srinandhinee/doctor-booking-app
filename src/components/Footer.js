@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
 	return (
@@ -9,10 +10,10 @@ export default function Footer() {
 					<h4>HealConnect</h4>
 					<p>Your trusted healthcare platform connecting patients with qualified doctors for seamless medical consultations.</p>
 					<div className="social-links">
-						<a href="#" aria-label="Facebook">📘</a>
-						<a href="#" aria-label="Twitter">🐦</a>
-						<a href="#" aria-label="LinkedIn">💼</a>
-						<a href="#" aria-label="Instagram">📷</a>
+						<a href="#" aria-label="Facebook"><FaFacebookF /></a>
+						<a href="#" aria-label="Twitter"><FaTwitter /></a>
+						<a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+						<a href="#" aria-label="Instagram"><FaInstagram /></a>
 					</div>
 				</div>
 				
@@ -35,8 +36,8 @@ export default function Footer() {
 				<div className="footer-section">
 					<h4>Contact</h4>
 					<p>📧 support@healconnect.com</p>
-					<p>📞 +1 (555) 123-4567</p>
-					<p>📍 123 Health Street, Medical City, MC 12345</p>
+					<p>📞 +91 94444 00000</p>
+					<p>📍 Ground Floor, No. 8, Velachery Main Road, Velachery, Chennai — 600042</p>
 					<p>🕒 Mon-Fri: 9AM-6PM</p>
 				</div>
 			</div>
@@ -54,5 +55,7 @@ export default function Footer() {
 		</footer>
 	);
 }
+
+
 
 

@@ -21,11 +21,19 @@ export async function registerUser(req, res) {
 		if (exists) return res.status(409).json({ message: 'email already registered' });
 		const passwordHash = await bcrypt.hash(password, 10);
 		const user = await User.create({ email, passwordHash, role, name: profile?.name || '' });
+		let customMessage = "Account created successfully.";
 		if (role === 'doctor') {
 			await Doctor.create({ user: user._id, ...profile, status: 'pending' });
+			customMessage = "Doctor account created successfully. Your profile is pending approval.";
+		} else if (role === 'patient') {
+			customMessage = "Patient account created successfully. You can now book appointments.";
 		}
 		const token = signToken(user);
-		return res.status(201).json({ token, user: { id: user._id, role: user.role, name: user.name, email: user.email } });
+		return res.status(201).json({
+			token,
+			user: { id: user._id, role: user.role, name: user.name, email: user.email },
+			message: customMessage
+		});
 	} catch (err) {
 		return res.status(500).json({ message: 'registration failed' });
 	}
